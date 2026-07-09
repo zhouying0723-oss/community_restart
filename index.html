@@ -56,10 +56,11 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
 
 .hover-tag{position:relative;color:#ffa94d;cursor:pointer;font-weight:600;display:inline-block}
 .hover-tag{position:relative;color:#ffa94d;cursor:pointer;font-weight:600;display:inline-block}
-.hover-tag .hover-popup{display:none;position:fixed;z-index:999;bottom:auto;top:50%;left:50%;transform:translate(-50%,-50%);border-radius:16px;overflow:hidden;border:2px solid rgba(255,255,255,.2);box-shadow:0 20px 80px rgba(0,0,0,.8);width:clamp(300px,30vw,600px);max-height:80vh;background:#0f0f1a}
-.hover-tag .hover-popup img{width:100%;display:block;max-height:65vh;object-fit:contain}
+.hover-tag .hover-popup{display:none;position:fixed;z-index:999;bottom:auto;top:50%;left:50%;transform:translate(-50%,-50%);border-radius:16px;overflow:clip;border:2px solid rgba(255,255,255,.2);box-shadow:0 20px 80px rgba(0,0,0,.8);width:clamp(300px,30vw,600px);max-height:85vh;background:#0f0f1a;flex-direction:column}
+.hover-tag .hover-popup .img-wrap{flex:1;display:flex;min-height:0;background:#000;overflow:hidden}
+.hover-tag .hover-popup img{width:100%;height:100%;object-fit:scale-down;display:block}
 .hover-tag .hover-popup .pop-label{padding:10px 14px;font-size:13px;font-weight:500;text-align:center;color:rgba(255,255,255,.7);background:rgba(0,0,0,.6);letter-spacing:.5px}
-.hover-tag:hover .hover-popup{display:block}
+.hover-tag:hover .hover-popup{display:flex}
 .hover-tag .hover-popup .close-hint{position:absolute;top:10px;right:10px;color:rgba(255,255,255,.3);font-size:11px;font-weight:300;background:rgba(0,0,0,.4);padding:2px 10px;border-radius:10px;pointer-events:none}
 
 
@@ -304,14 +305,14 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
                               <div class="rank-list">
             <div class="rank-item">
               <div class="rnum r1">01</div>
-              <div class="rname"><span class="hover-tag">我的关注<span class="hover-popup"><div class="pop-label">📱 我的关注 · 功能截图</div><img src="./image/我的关注截图.jpg" alt="我的关注"></span></span></div>
+              <div class="rname"><span class="hover-tag">我的关注<span class="hover-popup"><div class="pop-label">📱 我的关注 · 功能截图</div><div class="img-wrap"><img src="./image/我的关注截图.jpg" alt="我的关注"></div></span></span></div>
               <div class="rbar"><div class="fill f1" style="width:100%"></div></div>
               <div class="rcnt">889.4</div>
               <div class="rpct">15.2%</div>
             </div>
             <div class="rank-item">
               <div class="rnum r2">02</div>
-              <div class="rname"><span class="hover-tag">贵金属<span class="hover-popup"><div class="pop-label">📱 贵金属 · 功能截图</div><img src="./image/贵金属截图.png" alt="贵金属"></span></span></div>
+              <div class="rname"><span class="hover-tag">贵金属<span class="hover-popup"><div class="pop-label">📱 贵金属 · 功能截图</div><div class="img-wrap"><img src="./image/贵金属截图.png" alt="贵金属"></div></span></span></div>
               <div class="rbar"><div class="fill f1" style="width:94%"></div></div>
               <div class="rcnt">833.3</div>
               <div class="rpct">14.3%</div>
@@ -444,7 +445,7 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
             </div>
             <div class="rank-item">
               <div class="rnum r4">21</div>
-              <div class="rname"><span class="hover-tag">有奖投票<span class="hover-popup"><div class="pop-label">📱 有奖投票 · 功能截图</div><img src="./image/有奖投票截图.png" alt="有奖投票"></span></span></div>
+              <div class="rname"><span class="hover-tag">有奖投票<span class="hover-popup"><div class="pop-label">📱 有奖投票 · 功能截图</div><div class="img-wrap"><img src="./image/有奖投票截图.png" alt="有奖投票"></div></span></span></div>
               <div class="rbar"><div class="fill f4" style="width:5%"></div></div>
               <div class="rcnt">46.1</div>
               <div class="rpct">0.8%</div>
