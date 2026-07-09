@@ -56,12 +56,14 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
 
 .hover-tag{position:relative;color:#ffa94d;cursor:pointer;font-weight:600;display:inline-block}
 .hover-tag{position:relative;color:#ffa94d;cursor:pointer;font-weight:600;display:inline-block}
-.hover-tag .hover-popup{display:none;position:fixed;z-index:99999;bottom:auto;top:50%;left:50%;transform:translate(-50%,-50%);border-radius:16px;overflow:clip;border:2px solid rgba(255,255,255,.2);box-shadow:0 20px 80px rgba(0,0,0,.8);width:clamp(300px,30vw,600px);max-height:85vh;background:#0f0f1a;flex-direction:column}
-.hover-tag .hover-popup .img-wrap{flex:1;display:flex;min-height:0;background:#000;overflow:hidden}
-.hover-tag .hover-popup img{width:100%;height:100%;object-fit:scale-down;display:block}
-.hover-tag .hover-popup .pop-label{padding:10px 14px;font-size:13px;font-weight:500;text-align:center;color:#fff;background:rgba(0,0,0,.8);letter-spacing:.5px}
-.hover-tag:hover .hover-popup{display:flex}
-.hover-tag .hover-popup .close-hint{position:absolute;top:10px;right:10px;color:rgba(255,255,255,.3);font-size:11px;font-weight:300;background:rgba(0,0,0,.4);padding:2px 10px;border-radius:10px;pointer-events:none}
+.hover-overlay{display:none;position:fixed;z-index:99999;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,.5);justify-content:center;align-items:center}
+.hover-overlay.show{display:flex}
+.hover-overlay .pop-content{background:#0f0f1a;border-radius:16px;overflow:clip;border:2px solid rgba(255,255,255,.2);box-shadow:0 20px 80px rgba(0,0,0,.8);width:clamp(300px,30vw,600px);max-height:85vh;display:flex;flex-direction:column}
+.hover-overlay .pop-content .pop-label{padding:10px 14px;font-size:13px;font-weight:500;text-align:center;color:#fff;background:rgba(0,0,0,.8);letter-spacing:.5px;flex-shrink:0}
+.hover-overlay .pop-content .img-wrap{flex:1;display:flex;min-height:0;background:#000}
+.hover-overlay .pop-content img{width:100%;height:100%;object-fit:contain;display:block}
+.hover-overlay .pop-close{position:absolute;top:clamp(10px,3vh,30px);right:clamp(10px,3vw,30px);width:clamp(32px,2.5vw,44px);height:clamp(32px,2.5vw,44px);border-radius:50%;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:clamp(18px,1.5vw,24px);cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1}
+.hover-overlay .pop-close:hover{background:rgba(255,255,255,.15)}
 
 
 /* SLIDE 2 */
@@ -190,17 +192,7 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
             <div class="card">
               <div class="card-title">❌ 零内容外露，缺乏逛的欲望</div>
               <div class="card-desc">
-                <span class="hover-tag">东财
-                  <span class="hover-popup">
-                    <div class="pop-label">📱 东方财富社区</div>
-                    <img src="./image/东方财富社区首页.jpg" alt="东方财富社区首页">
-                  </span>
-                </span>和<span class="hover-tag">雪球
-                  <span class="hover-popup">
-                    <div class="pop-label">📱 雪球社区</div>
-                    <img src="./image/雪球社区首页.png" alt="雪球社区首页">
-                  </span>
-                </span>一进来，满眼都是热辣的股友动态、图表、大V长文、神评论。而新浪财经现在的首页，全是干巴巴的吧名和简介（如："指数吧：股指国债期货动态…"）。用户一眼看过去全是<strong>大段的说明文字</strong>，没有任何能激发吃瓜、吐槽的情绪锚点。
+                <span class="hover-tag" data-popup="东财">东财</span>和<span class="hover-tag" data-popup="雪球">雪球</span>一进来，满眼都是热辣的股友动态、图表、大V长文、神评论。而新浪财经现在的首页，全是干巴巴的吧名和简介（如："指数吧：股指国债期货动态…"）。用户一眼看过去全是<strong>大段的说明文字</strong>，没有任何能激发吃瓜、吐槽的情绪锚点。
               </div>
             </div>
             <div class="card">
@@ -305,14 +297,14 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
                               <div class="rank-list">
             <div class="rank-item">
               <div class="rnum r1">01</div>
-              <div class="rname"><span class="hover-tag">我的关注<span class="hover-popup"><div class="pop-label">📱 我的关注 · 功能截图</div><div class="img-wrap"><img src="./image/我的关注截图.jpg" alt="我的关注"></div></span></span></div>
+              <div class="rname"><span class="hover-tag" data-popup="我的关注">我的关注</span></div>
               <div class="rbar"><div class="fill f1" style="width:100%"></div></div>
               <div class="rcnt">889.4</div>
               <div class="rpct">15.2%</div>
             </div>
             <div class="rank-item">
               <div class="rnum r2">02</div>
-              <div class="rname"><span class="hover-tag">贵金属<span class="hover-popup"><div class="pop-label">📱 贵金属 · 功能截图</div><div class="img-wrap"><img src="./image/贵金属截图.png" alt="贵金属"></div></span></span></div>
+              <div class="rname"><span class="hover-tag" data-popup="贵金属">贵金属</span></div>
               <div class="rbar"><div class="fill f1" style="width:94%"></div></div>
               <div class="rcnt">833.3</div>
               <div class="rpct">14.3%</div>
@@ -445,7 +437,7 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
             </div>
             <div class="rank-item">
               <div class="rnum r4">21</div>
-              <div class="rname"><span class="hover-tag">有奖投票<span class="hover-popup"><div class="pop-label">📱 有奖投票 · 功能截图</div><div class="img-wrap"><img src="./image/有奖投票截图.png" alt="有奖投票"></div></span></span></div>
+              <div class="rname"><span class="hover-tag" data-popup="有奖投票">有奖投票</span></div>
               <div class="rbar"><div class="fill f4" style="width:5%"></div></div>
               <div class="rcnt">46.1</div>
               <div class="rpct">0.8%</div>
@@ -604,6 +596,61 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
       });
     });
   }
+})();
+</script>
+
+<div class="hover-overlay" id="hoverOverlay">
+  <button class="pop-close" id="popCloseBtn">&times;</button>
+  <div class="pop-content">
+    <div class="pop-label" id="popLabel"></div>
+    <div class="img-wrap"><img id="popImage" src="" alt=""></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var overlay = document.getElementById('hoverOverlay');
+  var popLabel = document.getElementById('popLabel');
+  var popImage = document.getElementById('popImage');
+  var closeBtn = document.getElementById('popCloseBtn');
+  var currentTag = null;
+
+  var popupData = {
+    '东财': { label: '📱 东方财富社区', img: './image/东方财富社区首页.jpg' },
+    '雪球': { label: '📱 雪球社区', img: './image/雪球社区首页.png' },
+    '我的关注': { label: '📱 我的关注 · 功能截图', img: './image/我的关注截图.jpg' },
+    '贵金属': { label: '📱 贵金属 · 功能截图', img: './image/贵金属截图.png' },
+    '有奖投票': { label: '📱 有奖投票 · 功能截图', img: './image/有奖投票截图.png' }
+  };
+
+  document.querySelectorAll('.hover-tag[data-popup]').forEach(function(el) {
+    el.addEventListener('mouseenter', function(e) {
+      var key = el.getAttribute('data-popup');
+      var data = popupData[key];
+      if (!data) return;
+      popLabel.textContent = data.label;
+      popImage.src = data.img;
+      popImage.alt = key;
+      overlay.classList.add('show');
+      currentTag = el;
+    });
+    el.addEventListener('mouseleave', function() {
+      overlay.classList.remove('show');
+      currentTag = null;
+    });
+  });
+
+  closeBtn.addEventListener('click', function() {
+    overlay.classList.remove('show');
+    currentTag = null;
+  });
+
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) {
+      overlay.classList.remove('show');
+      currentTag = null;
+    }
+  });
 })();
 </script>
 </body>
