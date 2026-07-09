@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>新浪财经社区首页改版汇报</title>
-<meta name="version" content="v1.3.5">
+<meta name="version" content="v1.3.6">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;background:#0f0f1a;overflow:hidden;font-size:14px}
@@ -786,15 +786,7 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
             ]
           }
         },
-        markPoint: {
-          data: [
-            { type: 'max', name: '峰值', symbolSize: 25, label: { color: '#fff', fontSize: 12, fontWeight: 'bold', formatter: '峰值\n{c}%' } },
-            { type: 'min', name: '低值', symbolSize: 25, label: { color: '#4dd9e6', fontSize: 12, fontWeight: 'bold', formatter: '低值\n{c}%' } }
-          ],
-          symbol: 'pin',
-          itemStyle: { color: '#ff6b6b' }
-        },
-        markLine: {
+                markLine: {
           silent: true,
           data: [
             { yAxis: 0.5, label: { formatter: '0.5%', color: 'rgba(255,255,255,0.2)', fontSize: 12 }, lineStyle: { color: 'rgba(255,255,255,0.12)', type: 'dashed', width: 0.5 } }
