@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>新浪财经社区首页改版汇报</title>
-<meta name="version" content="v1.5.3">
+<meta name="version" content="v1.6.0">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;background:#0f0f1a;overflow:hidden;font-size:14px}
@@ -87,7 +87,6 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
 .slide-2 h2 span{color:#4dd9e6}
 .slide-2 .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
 .slide-2 .g-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:30px 28px;position:relative;transition:all .3s ease}
-.slide-2 .g-card:hover{border-color:rgba(255,255,255,.15);transform:translateY(-3px);box-shadow:0 15px 30px rgba(0,0,0,.3)}
 .slide-2 .g-card .num{font-size:48px;font-weight:900;opacity:.06;position:absolute;top:12px;right:20px;color:#fff;line-height:1}
 .slide-2 .g-card .gi{font-size:32px;margin-bottom:14px}
 .slide-2 .g-card .g-title{color:#fff;font-size:18px;font-weight:600;margin-bottom:8px}
@@ -102,7 +101,6 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
 .slide-3 h2 span{color:#4ddf8e}
 .slide-3 .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
 .slide-3 .f-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-radius:14px;padding:22px;transition:all .3s ease}
-.slide-3 .f-card:hover{border-color:rgba(255,255,255,.12);transform:translateY(-3px)}
 .slide-3 .f-card .fi{font-size:28px;margin-bottom:10px}
 .slide-3 .f-card .ft{color:#fff;font-size:16px;font-weight:600;margin-bottom:6px}
 .slide-3 .f-card .fd{color:rgba(255,255,255,.45);font-size:13px;line-height:1.6;font-weight:300}
@@ -200,6 +198,13 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
 .slide.active-anim .rank-item:nth-child(10){animation-delay:.41s}
 .slide.active-anim .cat-tag{animation:fadeIn .4s ease-out .45s both}
 ::-webkit-scrollbar{display:none}
+
+/* 卡片模块 hover / 点击选中放大 10% */
+.slide-1 .card,.slide-2 .g-card,.slide-3 .f-card,.slide-4 .insight,.slide-5 .dp-item{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;cursor:pointer}
+.slide-1 .card:hover,.slide-2 .g-card:hover,.slide-3 .f-card:hover,.slide-4 .insight:hover,.slide-5 .dp-item:hover,
+.slide-1 .card.zoomed,.slide-2 .g-card.zoomed,.slide-3 .f-card.zoomed,.slide-4 .insight.zoomed,.slide-5 .dp-item.zoomed{
+  transform:scale(1.1) !important;box-shadow:0 12px 40px rgba(0,0,0,.45) !important;border-color:rgba(255,255,255,.25) !important;z-index:20;position:relative;animation:none !important
+}
 
 /* SLIDE 5 - Figma原型预览 */
 .slide-5{background:linear-gradient(135deg,#12102a,#1a0a2e 50%,#0a0a1a);justify-content:flex-start}
@@ -781,6 +786,20 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
 (function(){
   // 截图自适应 - 消除黑边
   window.addEventListener('resize', function() {});
+
+  // 卡片点击切换放大选中
+  var zoomCards = document.querySelectorAll('.slide-1 .card,.slide-2 .g-card,.slide-3 .f-card,.slide-4 .insight,.slide-5 .dp-item');
+  zoomCards.forEach(function(card){
+    card.addEventListener('click', function(e){
+      var wasZoomed = card.classList.contains('zoomed');
+      // 取消同一张幻灯片内其它卡片的选中
+      var slide = card.closest('.slide');
+      if (slide) slide.querySelectorAll('.zoomed').forEach(function(c){ c.classList.remove('zoomed'); });
+      // 再点取消, 否则选中
+      if (!wasZoomed) card.classList.add('zoomed');
+    });
+  });
+
   var overlay = document.getElementById('hoverOverlay');
   var popLabel = document.getElementById('popLabel');
   var popImage = document.getElementById('popImage');
