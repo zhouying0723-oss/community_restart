@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>新浪财经社区首页改版汇报</title>
-<meta name="version" content="v1.4.2">
+<meta name="version" content="v1.5.0">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;background:#0f0f1a;overflow:hidden;font-size:14px}
 .slides-container{width:100vw;height:100vh;position:relative;overflow:hidden;font-size:14px}
 .slides-track{display:flex;height:100%;transition:transform .7s cubic-bezier(.65,0,.35,1);will-change:transform}
-.slide{width:100vw;height:100vh;flex-shrink:0;display:flex;flex-direction:column;justify-content:center;padding:60px 80px;position:relative;overflow:hidden;font-size:14px}
+.slide{width:100vw;height:100vh;flex-shrink:0;display:flex;flex-direction:column;justify-content:center;padding:80px 80px 50px;position:relative;overflow:hidden;font-size:14px}
 .page-mark{position:absolute;bottom:30px;right:50px;color:rgba(255,255,255,.06);font-size:120px;font-weight:900;line-height:1;pointer-events:none;font-family:Georgia,serif}
 
 .nav-bar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:rgba(15,15,26,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
@@ -29,6 +29,7 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
 .bottom-bar .dot.active.d2{background:#4dd9e6;box-shadow:0 0 16px rgba(77,217,230,.4)}
 .bottom-bar .dot.active.d3{background:#4ddf8e;box-shadow:0 0 16px rgba(77,223,142,.4)}
 .bottom-bar .dot.active.d4{background:#ffa94d;box-shadow:0 0 16px rgba(255,169,77,.4)}
+.bottom-bar .dot.active.d5{background:#c782ff;box-shadow:0 0 16px rgba(200,130,255,.4)}
 .bottom-bar .hint{color:rgba(255,255,255,.1);font-size:12px;font-weight:300;margin-left:24px;letter-spacing:1.5px}
 
 /* SLIDE 1 */
@@ -199,6 +200,57 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
 .slide.active-anim .rank-item:nth-child(10){animation-delay:.41s}
 .slide.active-anim .cat-tag{animation:fadeIn .4s ease-out .45s both}
 ::-webkit-scrollbar{display:none}
+
+/* SLIDE 5 - Figma原型预览 */
+.slide-5{background:linear-gradient(135deg,#12102a,#1a0a2e 50%,#0a0a1a);justify-content:flex-start}
+.slide-5 .label{display:inline-block;background:rgba(200,130,255,.12);border:1px solid rgba(200,130,255,.25);color:#c782ff;font-size:14px;padding:0.25rem 1rem;border-radius:20px;letter-spacing:1.5px;font-weight:500;margin-bottom:1rem;align-self:flex-start}
+.slide-5 h2{color:#fff;font-size:28px;font-weight:800;margin-bottom:0.6rem;line-height:1.3}
+.slide-5 h2 span{color:#c782ff}
+.slide-5 .sub{color:rgba(255,255,255,.4);font-size:14px;font-weight:300;margin-bottom:0}
+.slide-5 .inner{display:flex;gap:30px;flex:1;min-height:0;align-items:stretch;justify-content:center}
+/* Phone mock */
+.slide-5 .phone-wrap{flex:0 0 400px;display:flex;flex-direction:column;align-items:center;height:100%;min-height:0}
+.slide-5 .phone-frame{width:400px;flex:1;min-height:0;max-height:720px;border-radius:24px;border:2px solid rgba(255,255,255,.12);background:#0a0a1a;overflow:hidden;display:flex;flex-direction:column;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.slide-5 .phone-status{display:flex;justify-content:space-between;padding:6px 16px 2px;color:rgba(255,255,255,.6);font-size:14px;flex-shrink:0;font-weight:300}
+.slide-5 .phone-scroll{flex:1;overflow-y:auto;overflow-x:hidden;padding:0 0 10px;scroll-behavior:smooth}
+.slide-5 .phone-scroll::-webkit-scrollbar{width:0}
+/* Feed items */
+.slide-5 .ph-label{font-size:14px;color:rgba(255,255,255,.4);padding:6px 12px 3px;font-weight:300;flex-shrink:0}
+.slide-5 .ph-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:10px;margin:3px 8px;padding:8px 10px}
+.slide-5 .ph-card-top{display:flex;align-items:center;gap:6px;margin-bottom:5px}
+.slide-5 .ph-avatar{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#c782ff,#ff6b6b);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.slide-5 .ph-name{color:#fff;font-size:14px;font-weight:500;white-space:nowrap}
+.slide-5 .ph-lv{font-size:14px;background:linear-gradient(135deg,#ffcc44,#ffa94d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;margin-left:auto}
+.slide-5 .ph-lv.low{background:linear-gradient(135deg,#aaa,#ddd);-webkit-background-clip:text}
+.slide-5 .ph-text{color:rgba(255,255,255,.7);font-size:14px;line-height:1.5;margin-bottom:5px;font-weight:300}
+.slide-5 .ph-actions{display:flex;align-items:center;gap:14px;padding-top:3px;border-top:1px solid rgba(255,255,255,.04);color:rgba(255,255,255,.25);font-size:14px}
+.slide-5 .ph-more{margin-left:auto;color:rgba(255,255,255,.35)}
+/* Forum module */
+.slide-5 .ph-section-title{display:flex;align-items:center;justify-content:space-between;padding:4px 12px 2px}
+.slide-5 .ph-section-title span{color:rgba(255,255,255,.6);font-size:14px;font-weight:600}
+.slide-5 .ph-section-title .ph-more-link{color:rgba(255,255,255,.3);font-size:14px;font-weight:300}
+.slide-5 .ph-scroll-x{display:flex;gap:6px;overflow-x:auto;padding:2px 8px 4px;scroll-behavior:smooth}
+.slide-5 .ph-scroll-x::-webkit-scrollbar{display:none}
+.slide-5 .ph-forum-card{flex:0 0 100px;height:60px;border-radius:8px;background:linear-gradient(135deg,rgba(200,130,255,.15),rgba(255,60,60,.1));border:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;justify-content:flex-end;padding:5px;position:relative;overflow:hidden}
+.slide-5 .ph-forum-name{color:#fff;font-size:14px;font-weight:600;z-index:1}
+.slide-5 .ph-forum-stat{color:rgba(255,255,255,.5);font-size:14px;z-index:1;line-height:1.3}
+.slide-5 .ph-forum-stat .hot{color:#ff6b6b}
+.slide-5 .ph-forum-btn{position:absolute;right:4px;bottom:4px;width:18px;height:18px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.3);font-size:14px}
+/* Vote card */
+.slide-5 .ph-vote{background:rgba(255,200,60,.04);border:1px solid rgba(255,200,60,.12);border-radius:10px;margin:3px 8px;padding:6px 10px;display:flex;align-items:center;gap:8px}
+.slide-5 .ph-vote-icon{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#ff6b6b,#ffa94d);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.slide-5 .ph-vote-text{color:rgba(255,255,255,.5);font-size:14px;font-weight:300;flex:1}
+.slide-5 .ph-vote-deadline{color:rgba(255,200,60,.6);font-size:14px;font-weight:300}
+/* Follow section */
+.slide-5 .ph-follow-header{display:flex;align-items:center;justify-content:space-between;padding:4px 12px}
+.slide-5 .ph-follow-header span{color:rgba(255,255,255,.6);font-size:14px;font-weight:600}
+.slide-5 .ph-follow-header a{color:rgba(255,255,255,.3);font-size:14px;font-weight:300;text-decoration:none}
+/* Description panel */
+.slide-5 .desc-panel{flex:0 0 360px;display:flex;flex-direction:column;gap:12px}
+.slide-5 .desc-panel .dp-item{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:12px 14px}
+.slide-5 .desc-panel .dp-title{color:#c782ff;font-size:14px;font-weight:600;margin-bottom:4px}
+.slide-5 .desc-panel .dp-text{color:rgba(255,255,255,.5);font-size:14px;line-height:1.6;font-weight:300}
+.slide-5 .desc-panel .dp-tag{display:inline-block;background:rgba(200,130,255,.1);border:1px solid rgba(200,130,255,.15);color:#c782ff;font-size:14px;padding:0 6px;border-radius:4px;margin-right:3px}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
 </head>
@@ -208,7 +260,7 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
   <div class="brand">新浪财经 · <strong>社区首页改版汇报</strong></div>
   <div class="nav-controls">
     <button class="nav-btn" id="prevBtn" disabled>&lsaquo;</button>
-    <span class="page-indicator" id="pageIndicator">1 / 3</span>
+    <span class="page-indicator" id="pageIndicator">1 / 5</span>
     <button class="nav-btn" id="nextBtn">&rsaquo;</button>
   </div>
 </div>
@@ -540,6 +592,53 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
       </div>
     </div>
 
+  <!-- SLIDE 5 -->
+    <div class="slide slide-5">
+      <div class="page-mark">05</div>
+      <div class="label">📱 Figma 原型</div>
+      <h2>社区首页改版<br><span>交互原型</span></h2>
+      <div class="sub">Figma 设计稿 · 竖屏预览<br>（可滚轮滑动查看）</div>
+      <div class="inner">
+        <div class="phone-wrap">
+          <div class="phone-frame" id="phoneFrame">
+            <div class="phone-status">
+              <span>9:41</span>
+              <span>🔋 100%</span>
+            </div>
+            <iframe src="https://false-delete-62497230.figma.site/" style="flex:1;width:100%;border:none;background:#fff" sandbox="allow-scripts allow-same-origin"></iframe>
+          </div>
+          <div style="color:rgba(255,255,255,.2);font-size:14px;font-weight:300">⬆⬇ 手机内滚动查看完整原型</div>
+        </div>
+        <div class="desc-panel">
+          <div class="dp-item">
+            <div class="dp-title">📄 改版要点</div>
+            <div class="dp-text">
+              <span class="dp-tag">VoiceCard</span> 帖子卡片 · 头像 + Lv等级 + 互动按钮<br>
+              <span class="dp-tag">StockCard</span> 股票卡片 · 与帖子统一风格<br>
+              <span class="dp-tag">讨论吧</span> 横向滑动 · 渐变底色 + 热标签<br>
+              <span class="dp-tag">有奖投票</span> 投票卡片 · 倒计时显示<br>
+              <span class="dp-tag">关注流</span> 内容直出 · 拒绝空屏幕
+            </div>
+          </div>
+          <div class="dp-item">
+            <div class="dp-title">🔄 交互说明</div>
+            <div class="dp-text">
+              讨论吧支持横向滑动切换，点击进入箭头跳转吧详情页。<br>
+              帖子卡片底部操作栏统一排布：分享 → 评论 → 点赞 → 更多。<br>
+              投票卡片支持点击参与。"查看更多"引导关注扩展。
+            </div>
+          </div>
+          <div class="dp-item">
+            <div class="dp-title">🎨 视觉风格</div>
+            <div class="dp-text">
+              深色主题 · 渐变配色 · 毛玻璃效果<br>
+              吧模块采用背景图 + 高斯模糊 + 半透明遮罩<br>
+              等级勋章采用渐变金色，高亮用户身份
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -548,6 +647,7 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
   <button class="dot" data-index="1"></button>
   <button class="dot" data-index="2"></button>
   <button class="dot" data-index="3"></button>
+  <button class="dot" data-index="4"></button>
   <span class="hint">键盘 ↑↓ / 滚轮</span>
 </div>
 
@@ -594,7 +694,7 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
   function updateUI() {
     dots.forEach(function(d, i) {
       d.classList.toggle('active', i === current);
-      ['d1','d2','d3','d4'].forEach(function(c) { d.classList.remove(c); });
+      ['d1','d2','d3','d4','d5'].forEach(function(c) { d.classList.remove(c); });
     });
     var activeDot = document.querySelector('.bottom-bar .dot.active');
     if (activeDot) activeDot.classList.add('d' + (current + 1));
