@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>新浪财经社区首页改版汇报</title>
-<meta name="version" content="v1.6.3">
+<meta name="version" content="v1.7.0">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;background:#0f0f1a;overflow:hidden;font-size:14px}
@@ -46,15 +46,16 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
 .slide-1 .card .card-title{color:#fff;font-size:15px;font-weight:600;margin-bottom:5px}
 .slide-1 .card .card-desc{color:rgba(255,255,255,.5);font-size:13px;line-height:1.65;font-weight:300}
 .slide-1 .card .card-desc strong{color:rgba(255,255,255,.7);font-weight:500}
-.slide-1 .screenshot{border-radius:12px;overflow:hidden;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.06);flex:1;display:flex;flex-direction:column;min-height:0}
+.slide-1 .screenshot{border-radius:12px;overflow:hidden;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.06);flex:1;display:flex;flex-direction:column;min-height:0;width:400px}
 .slide-1 .screenshot .shot-head{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(0,0,0,.2);border-bottom:1px solid rgba(255,255,255,.04);flex-shrink:0}
 .slide-1 .screenshot .shot-head .tag{background:rgba(255,60,60,.2);color:#ff6b6b;padding:2px 10px;border-radius:10px;font-size:12px;font-weight:500}
 .slide-1 .screenshot .shot-head span{color:rgba(255,255,255,.4);font-size:12px;font-weight:300}
-.slide-1 .screenshot .img-wrap{flex:1;background:#000;background-size:contain;background-repeat:no-repeat;background-position:center center;min-height:0}
+.slide-1 .screenshot .img-wrap{flex:1;background:#000;min-height:0;overflow-y:auto;overflow-x:hidden}
+.slide-1 .screenshot .img-wrap img{width:100%;display:block}
 .slide-1 .inner{display:flex;gap:24px;flex:1;align-items:stretch;min-height:0}
 .slide-1 .left{flex:0 0 320px;display:flex;flex-direction:column;justify-content:center;min-width:0}
 .slide-1 .mid{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
-.slide-1 .right{flex:0 0 280px;display:flex;flex-direction:column}
+.slide-1 .right{flex:0 0 400px;display:flex;flex-direction:column}
 .slide-1 .penetration-wrap{background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:6px;display:flex;flex-direction:column;flex:1;min-height:0;overflow:hidden}
 .slide-1 .pen-title{color:rgba(255,255,255,.6);font-size:14px;font-weight:600;text-align:center;margin-bottom:3px;flex-shrink:0}
 .slide-1 .pen-chart-wrap{flex:1;min-height:0;position:relative}
@@ -115,14 +116,15 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
 .slide-4 .sub{color:rgba(255,255,255,.4);font-size:14px;font-weight:300;margin-bottom:0.5rem}
 .slide-4 .inner{display:flex;gap:18px;flex:1;min-height:0}
 .slide-4 .left{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
-.slide-4 .right{flex:0 0 280px;display:flex;flex-direction:column;justify-content:center;gap:6px}
+.slide-4 .right{flex:0 0 400px;display:flex;flex-direction:column;justify-content:center;gap:6px}
 .slide-4 .left .data-row{display:flex;gap:12px;flex:1;min-height:0}
 .slide-4 .left .data-row .rank-list{flex:1;min-width:0}
-.slide-4 .screenshot{border-radius:12px;overflow:hidden;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.06);flex:1;display:flex;flex-direction:column;min-height:0}
+.slide-4 .screenshot{border-radius:12px;overflow:hidden;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.06);flex:1;display:flex;flex-direction:column;min-height:0;width:400px}
 .slide-4 .screenshot .shot-head{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:rgba(0,0,0,.2);border-bottom:1px solid rgba(255,255,255,.04);flex-shrink:0}
 .slide-4 .screenshot .shot-head .tag{background:rgba(255,160,0,.2);color:#ffa94d;padding:2px 8px;border-radius:8px;font-size:12px;font-weight:500}
 .slide-4 .screenshot .shot-head span{color:rgba(255,255,255,.4);font-size:12px;font-weight:300}
-.slide-4 .screenshot .img-wrap{flex:1;background:#000;background-size:contain;background-repeat:no-repeat;background-position:center center;min-height:0}
+.slide-4 .screenshot .img-wrap{flex:1;background:#000;min-height:0;overflow-y:auto;overflow-x:hidden}
+.slide-4 .screenshot .img-wrap img{width:100%;display:block}
 .slide-4 .chart-wrap{border-radius:12px;overflow:hidden;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.06);flex:1;display:flex;min-height:0}
 .slide-4 .chart-wrap img{width:100%;height:auto;display:block}
 .slide-4 .rank-list{display:grid;grid-template-columns:1fr 1fr;gap:2px 8px;max-height:100%;overflow-y:auto;align-content:start}
@@ -328,7 +330,7 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
               <div class="tag">现状</div>
               <span>社区首页截图</span>
             </div>
-            <div class="img-wrap" style="background-image:url(./image/社区首页现状截图.jpg)"></div>
+            <div class="img-wrap"><img src="./image/社区首页现状截图.jpg" alt="社区首页现状"></div>
           </div>
         </div>
       </div>
@@ -591,7 +593,7 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
               <div class="tag">🔄 热力回归</div>
               <span>社区首页现状</span>
             </div>
-            <div class="img-wrap" style="background-image:url(./image/社区首页现状截图.jpg)"></div>
+            <div class="img-wrap"><img src="./image/社区首页现状截图.jpg" alt="社区首页现状"></div>
           </div>
           </div>
       </div>
