@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>新浪财经社区首页改版汇报</title>
-<meta name="version" content="v1.6.1">
+<meta name="version" content="v1.6.0">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;background:#0f0f1a;overflow:hidden;font-size:14px}
@@ -200,7 +200,7 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
 ::-webkit-scrollbar{display:none}
 
 /* 卡片模块 hover / 点击选中放大 10% */
-.slide-1 .card,.slide-2 .g-card,.slide-3 .f-card,.slide-4 .insight,.slide-5 .dp-item{transition:none;cursor:pointer}
+.slide-1 .card,.slide-2 .g-card,.slide-3 .f-card,.slide-4 .insight,.slide-5 .dp-item{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;cursor:pointer}
 .slide-1 .card:hover,.slide-2 .g-card:hover,.slide-3 .f-card:hover,.slide-4 .insight:hover,.slide-5 .dp-item:hover,
 .slide-1 .card.zoomed,.slide-2 .g-card.zoomed,.slide-3 .f-card.zoomed,.slide-4 .insight.zoomed,.slide-5 .dp-item.zoomed{
   transform:scale(1.1) !important;box-shadow:0 12px 40px rgba(0,0,0,.45) !important;border-color:rgba(255,255,255,.25) !important;z-index:20;position:relative;animation:none !important
