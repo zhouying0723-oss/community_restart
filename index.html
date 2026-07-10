@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>新浪财经社区首页改版汇报</title>
-<meta name="version" content="v1.3.6">
+<meta name="version" content="v1.4.0">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;background:#0f0f1a;overflow:hidden;font-size:14px}
@@ -51,9 +51,9 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
 .slide-1 .screenshot .shot-head span{color:rgba(255,255,255,.4);font-size:12px;font-weight:300}
 .slide-1 .screenshot .img-wrap{flex:1;background:#000;background-size:contain;background-repeat:no-repeat;background-position:center center;min-height:0}
 .slide-1 .inner{display:flex;gap:24px;flex:1;align-items:stretch;min-height:0}
-.slide-1 .left{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0;max-width:42%}
+.slide-1 .left{flex:0 0 320px;display:flex;flex-direction:column;justify-content:center;min-width:0}
 .slide-1 .mid{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
-.slide-1 .right{flex:0 0 260px;display:flex;flex-direction:column;justify-content:center}
+.slide-1 .right{flex:0 0 280px;display:flex;flex-direction:column}
 .slide-1 .penetration-wrap{background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:6px;display:flex;flex-direction:column;flex:1;min-height:0;overflow:hidden}
 .slide-1 .pen-title{color:rgba(255,255,255,.6);font-size:14px;font-weight:600;text-align:center;margin-bottom:3px;flex-shrink:0}
 .slide-1 .pen-chart-wrap{flex:1;min-height:0;position:relative}
@@ -126,8 +126,8 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
 .slide-4 .screenshot .img-wrap{flex:1;background:#000;background-size:contain;background-repeat:no-repeat;background-position:center center;min-height:0}
 .slide-4 .chart-wrap{border-radius:12px;overflow:hidden;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.06);flex:1;display:flex;min-height:0}
 .slide-4 .chart-wrap img{width:100%;height:auto;display:block}
-.slide-4 .rank-list{display:grid;grid-template-columns:1fr 1fr;gap:3px 8px;max-height:100%;overflow-y:auto}
-.slide-4 .rank-item{display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-radius:5px;padding:2px 6px}
+.slide-4 .rank-list{display:grid;grid-template-columns:1fr 1fr;gap:2px 8px;max-height:100%;overflow-y:auto;align-content:start}
+.slide-4 .rank-item{display:flex;align-items:center;gap:3px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-radius:5px;padding:2px 6px}
 .slide-4 .rank-item .rnum{font-size:16px;font-weight:700;min-width:1rem;text-align:center}
 .slide-4 .rank-item .rnum.r1{color:#ff6b6b}
 .slide-4 .rank-item .rnum.r2{color:#f7b731}
@@ -136,14 +136,14 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
 .slide-4 .rank-item .rname{color:#fff;font-size:16px;font-weight:500;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .slide-4 .rank-item .rname .hover-tag{color:#fff}
 .slide-4 .rank-item .rname .hover-tag .hover-popup .pop-label{white-space:normal}
-.slide-4 .rank-item .rbar{flex:0 0 40px;height:3px;border-radius:2px;background:rgba(255,255,255,.06);overflow:hidden;font-size:14px}
+.slide-4 .rank-item .rbar{flex:0 0 44px;height:3px;border-radius:2px;background:rgba(255,255,255,.06);overflow:hidden;font-size:14px}
 .slide-4 .rank-item .rbar .fill{height:100%;border-radius:2px;transition:width .8s ease}
 .slide-4 .rank-item .rbar .fill.f1{background:linear-gradient(90deg,#ff6b6b,#ffa94d)}
 .slide-4 .rank-item .rbar .fill.f2{background:linear-gradient(90deg,#f7b731,#ffd43b)}
 .slide-4 .rank-item .rbar .fill.f3{background:linear-gradient(90deg,#4dd9e6,#63e6be)}
 .slide-4 .rank-item .rbar .fill.f4{background:rgba(255,255,255,.15)}
-.slide-4 .rank-item .rcnt{color:rgba(255,255,255,.35);font-size:16px;min-width:2rem;text-align:right}
-.slide-4 .rank-item .rpct{color:rgba(255,255,255,.25);font-size:16px;min-width:1.8rem;text-align:right}
+.slide-4 .rank-item .rcnt{color:rgba(255,255,255,.35);font-size:16px;min-width:2.2rem;text-align:right;flex-shrink:0}
+.slide-4 .rank-item .rpct{color:rgba(255,255,255,.25);font-size:16px;min-width:1.8rem;text-align:right;flex-shrink:0}
 .slide-4 .cat-tag{display:inline-block;background:rgba(255,255,255,.04);color:rgba(255,255,255,.4);font-size:12px;padding:1px 8px;border-radius:6px;margin-right:3px;font-weight:400}
 
 /* Slide 4 insight section */
@@ -680,6 +680,8 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
 
 <script>
 (function(){
+  // 截图自适应 - 消除黑边
+  window.addEventListener('resize', function() {});
   var overlay = document.getElementById('hoverOverlay');
   var popLabel = document.getElementById('popLabel');
   var popImage = document.getElementById('popImage');
@@ -749,7 +751,7 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
       grid: { left: '4%', right: '6%', top: '5%', bottom: '10%' },
       xAxis: {
         type: 'category',
-        data: ['0101\\n~0107','0108\\n~0114','0115\\n~0121','0122\\n~0128','0129\\n~0204','0205\\n~0211','0212\\n~0218','0219\\n~0225','0226\\n~0304','0305\\n~0311','0312\\n~0318','0319\\n~0325','0326\\n~0401','0402\\n~0408','0409\\n~0415','0416\\n~0422','0423\\n~0429','0430\\n~0506','0507\\n~0513','0514\\n~0520','0521\\n~0527','0528\\n~0603','0604\\n~0610','0611\\n~0617','0618\\n~0624','0625\\n~0701'],
+        data: ['0101\n~0107','0108\n~0114','0115\n~0121','0122\n~0128','0129\n~0204','0205\n~0211','0212\n~0218','0219\n~0225','0226\n~0304','0305\n~0311','0312\n~0318','0319\n~0325','0326\n~0401','0402\n~0408','0409\n~0415','0416\n~0422','0423\n~0429','0430\n~0506','0507\n~0513','0514\n~0520','0521\n~0527','0528\n~0603','0604\n~0610','0611\n~0617','0618\n~0624','0625\n~0701'],
         axisLabel: { color: 'rgba(255,255,255,0.4)', fontSize: 12, interval: 2 },
         axisLine: { lineStyle: { color: 'rgba(255,255,255,0.06)' } },
         axisTick: { show: false }
@@ -797,22 +799,22 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
           itemStyle: { emphasis: { color: 'transparent' } },
           data: [
             [{
-              xAxis: '0122\\n~0128',
+              xAxis: '0122\n~0128',
               itemStyle: { color: 'rgba(255,200,50,0.08)' }
             }, {
-              xAxis: '0122\\n~0128'
+              xAxis: '0122\n~0128'
             }],
             [{
-              xAxis: '0129\\n~0204',
+              xAxis: '0129\n~0204',
               itemStyle: { color: 'rgba(255,100,100,0.08)' }
             }, {
-              xAxis: '0129\\n~0204'
+              xAxis: '0129\n~0204'
             }],
             [{
-              xAxis: '0205\\n~0211',
+              xAxis: '0205\n~0211',
               itemStyle: { color: 'rgba(255,150,50,0.08)' }
             }, {
-              xAxis: '0205\\n~0211'
+              xAxis: '0205\n~0211'
             }]
           ]
         }
