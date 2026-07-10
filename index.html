@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>新浪财经社区首页改版汇报</title>
-<meta name="version" content="v1.4.0">
+<meta name="version" content="v1.4.1">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;background:#0f0f1a;overflow:hidden;font-size:14px}
@@ -127,7 +127,7 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
 .slide-4 .chart-wrap{border-radius:12px;overflow:hidden;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.06);flex:1;display:flex;min-height:0}
 .slide-4 .chart-wrap img{width:100%;height:auto;display:block}
 .slide-4 .rank-list{display:grid;grid-template-columns:1fr 1fr;gap:2px 8px;max-height:100%;overflow-y:auto;align-content:start}
-.slide-4 .rank-item{display:flex;align-items:center;gap:3px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-radius:5px;padding:2px 6px}
+.slide-4 .rank-item{display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-radius:5px;padding:3px 7px}
 .slide-4 .rank-item .rnum{font-size:16px;font-weight:700;min-width:1rem;text-align:center}
 .slide-4 .rank-item .rnum.r1{color:#ff6b6b}
 .slide-4 .rank-item .rnum.r2{color:#f7b731}
@@ -136,7 +136,7 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
 .slide-4 .rank-item .rname{color:#fff;font-size:16px;font-weight:500;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .slide-4 .rank-item .rname .hover-tag{color:#fff}
 .slide-4 .rank-item .rname .hover-tag .hover-popup .pop-label{white-space:normal}
-.slide-4 .rank-item .rbar{flex:0 0 44px;height:3px;border-radius:2px;background:rgba(255,255,255,.06);overflow:hidden;font-size:14px}
+.slide-4 .rank-item .rbar{flex:0 0 44px;height:3px;border-radius:2px;background:rgba(255,255,255,.06);overflow:hidden;font-size:14px;margin-left:auto}
 .slide-4 .rank-item .rbar .fill{height:100%;border-radius:2px;transition:width .8s ease}
 .slide-4 .rank-item .rbar .fill.f1{background:linear-gradient(90deg,#ff6b6b,#ffa94d)}
 .slide-4 .rank-item .rbar .fill.f2{background:linear-gradient(90deg,#f7b731,#ffd43b)}
@@ -353,167 +353,12 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
 	          <div class="data-row">
                               <div class="rank-list">
             <div class="rank-item">
-              <div class="rnum r1">01</div>
-              <div class="rname"><span class="hover-tag" data-popup="我的关注">我的关注</span></div>
-              <div class="rbar"><div class="fill f1" style="width:100%"></div></div>
-              <div class="rcnt">889.4</div>
-              <div class="rpct">15.2%</div>
-            </div>
-            <div class="rank-item">
-              <div class="rnum r2">02</div>
-              <div class="rname"><span class="hover-tag" data-popup="贵金属">贵金属</span></div>
-              <div class="rbar"><div class="fill f1" style="width:94%"></div></div>
-              <div class="rcnt">833.3</div>
-              <div class="rpct">14.3%</div>
-            </div>
-            <div class="rank-item">
-              <div class="rnum r3">03</div>
-              <div class="rname">原油吧</div>
-              <div class="rbar"><div class="fill f1" style="width:59%"></div></div>
-              <div class="rcnt">522.9</div>
-              <div class="rpct">9.0%</div>
-            </div>
-            <div class="rank-item">
-              <div class="rnum r4">04</div>
-              <div class="rname">指数吧</div>
-              <div class="rbar"><div class="fill f2" style="width:48%"></div></div>
-              <div class="rcnt">426.4</div>
-              <div class="rpct">7.3%</div>
-            </div>
-            <div class="rank-item">
-              <div class="rnum r4">05</div>
-              <div class="rname">A股</div>
-              <div class="rbar"><div class="fill f2" style="width:47%"></div></div>
-              <div class="rcnt">415.9</div>
-              <div class="rpct">7.1%</div>
-            </div>
-            <div class="rank-item">
-              <div class="rnum r4">06</div>
-              <div class="rname">有色吧</div>
-              <div class="rbar"><div class="fill f2" style="width:40%"></div></div>
-              <div class="rcnt">359.4</div>
-              <div class="rpct">6.2%</div>
-            </div>
-            <div class="rank-item">
-              <div class="rnum r4">07</div>
-              <div class="rname">热议个股</div>
-              <div class="rbar"><div class="fill f2" style="width:40%"></div></div>
-              <div class="rcnt">355.9</div>
-              <div class="rpct">6.1%</div>
-            </div>
-            <div class="rank-item">
-              <div class="rnum r4">08</div>
-              <div class="rname">十大名博</div>
-              <div class="rbar"><div class="fill f2" style="width:38%"></div></div>
-              <div class="rcnt">338.0</div>
-              <div class="rpct">5.8%</div>
-            </div>
-            <div class="rank-item">
-              <div class="rnum r4">09</div>
-              <div class="rname">美股</div>
-              <div class="rbar"><div class="fill f4" style="width:27%"></div></div>
-              <div class="rcnt">243.0</div>
-              <div class="rpct">4.2%</div>
-            </div>
-            <div class="rank-item">
-              <div class="rnum r4">10</div>
-              <div class="rname">能化吧</div>
-              <div class="rbar"><div class="fill f4" style="width:22%"></div></div>
-              <div class="rcnt">192.6</div>
-              <div class="rpct">3.3%</div>
-            </div>
-            <div class="rank-item">
-              <div class="rnum r4">11</div>
-              <div class="rname">农产品</div>
-              <div class="rbar"><div class="fill f4" style="width:21%"></div></div>
-              <div class="rcnt">189.1</div>
-              <div class="rpct">3.2%</div>
-            </div>
-            <div class="rank-item">
-              <div class="rnum r4">12</div>
-              <div class="rname">基金</div>
-              <div class="rbar"><div class="fill f4" style="width:19%"></div></div>
-              <div class="rcnt">171.1</div>
-              <div class="rpct">2.9%</div>
-            </div>
-            <div class="rank-item">
-              <div class="rnum r4">13</div>
-              <div class="rname">美股吧</div>
-              <div class="rbar"><div class="fill f4" style="width:18%"></div></div>
-              <div class="rcnt">161.3</div>
-              <div class="rpct">2.8%</div>
-            </div>
-            <div class="rank-item">
-              <div class="rnum r4">14</div>
-              <div class="rname">黑色和建材</div>
-              <div class="rbar"><div class="fill f4" style="width:15%"></div></div>
-              <div class="rcnt">129.7</div>
-              <div class="rpct">2.2%</div>
-            </div>
-            <div class="rank-item">
-              <div class="rnum r4">15</div>
-              <div class="rname">油脂和油料</div>
-              <div class="rbar"><div class="fill f4" style="width:13%"></div></div>
-              <div class="rcnt">118.1</div>
-              <div class="rpct">2.0%</div>
-            </div>
-            <div class="rank-item">
-              <div class="rnum r4">16</div>
-              <div class="rname">期货</div>
-              <div class="rbar"><div class="fill f4" style="width:11%"></div></div>
-              <div class="rcnt">97.9</div>
-              <div class="rpct">1.7%</div>
-            </div>
-            <div class="rank-item">
-              <div class="rnum r4">17</div>
-              <div class="rname">ETF</div>
-              <div class="rbar"><div class="fill f4" style="width:9%"></div></div>
-              <div class="rcnt">81.6</div>
-              <div class="rpct">1.4%</div>
-            </div>
-            <div class="rank-item">
-              <div class="rnum r4">18</div>
-              <div class="rname">最近看过</div>
-              <div class="rbar"><div class="fill f4" style="width:9%"></div></div>
-              <div class="rcnt">79.3</div>
-              <div class="rpct">1.4%</div>
-            </div>
-            <div class="rank-item">
-              <div class="rnum r4">19</div>
-              <div class="rname">专业投顾</div>
-              <div class="rbar"><div class="fill f4" style="width:7%"></div></div>
-              <div class="rcnt">61.4</div>
-              <div class="rpct">1.1%</div>
-            </div>
-            <div class="rank-item">
-              <div class="rnum r4">20</div>
-              <div class="rname">大V私享汇</div>
-              <div class="rbar"><div class="fill f4" style="width:6%"></div></div>
-              <div class="rcnt">53.0</div>
-              <div class="rpct">0.9%</div>
-            </div>
-            <div class="rank-item">
-              <div class="rnum r4">21</div>
-              <div class="rname"><span class="hover-tag" data-popup="有奖投票">有奖投票</span></div>
-              <div class="rbar"><div class="fill f4" style="width:5%"></div></div>
-              <div class="rcnt">46.1</div>
-              <div class="rpct">0.8%</div>
-            </div>
-            <div class="rank-item">
-              <div class="rnum r4">22</div>
-              <div class="rname">权益基金</div>
-              <div class="rbar"><div class="fill f4" style="width:4%"></div></div>
-              <div class="rcnt">39.6</div>
-              <div class="rpct">0.7%</div>
-            </div>
-            <div class="rank-item">
-              <div class="rnum r4">23</div>
-              <div class="rname">固收基金</div>
-              <div class="rbar"><div class="fill f4" style="width:4%"></div></div>
-              <div class="rcnt">34.0</div>
-              <div class="rpct">0.6%</div>
-            </div>
-          </div>
+  <div class="rnum r1">01</div>
+  <div class="rname"><span class="hover-tag" data-popup="我的关注">我的关注</span></div>
+  <div class="rcnt">889.4</div>
+  <div class="rpct">15.2%</div>
+  <div class="rbar"><div class="fill f1" style="width:100%"></div></div>
+</div>
             <div class="chart-wrap">
               <div id="userEngChart" style="width:100%;height:100%;min-height:150px"></div>
             </div>
