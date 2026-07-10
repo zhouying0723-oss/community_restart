@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>新浪财经社区首页改版汇报</title>
-<meta name="version" content="v1.7.0">
+<meta name="version" content="v1.7.1">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;background:#0f0f1a;overflow:hidden;font-size:14px}
@@ -253,10 +253,10 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
 .slide-5 .ph-follow-header span{color:rgba(255,255,255,.6);font-size:14px;font-weight:600}
 .slide-5 .ph-follow-header a{color:rgba(255,255,255,.3);font-size:14px;font-weight:300;text-decoration:none}
 /* Description panel */
-.slide-5 .desc-panel{flex:0 0 360px;display:flex;flex-direction:column;gap:12px}
-.slide-5 .desc-panel .dp-item{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:12px 14px}
-.slide-5 .desc-panel .dp-title{color:#c782ff;font-size:14px;font-weight:600;margin-bottom:4px}
-.slide-5 .desc-panel .dp-text{color:rgba(255,255,255,.5);font-size:14px;line-height:1.6;font-weight:300}
+.slide-5 .desc-panel{flex:0 0 420px;display:flex;flex-direction:column;gap:10px}
+.slide-5 .desc-panel .dp-item{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:10px 12px;overflow-y:auto;min-height:0}
+.slide-5 .desc-panel .dp-title{color:#c782ff;font-size:14px;font-weight:600;margin-bottom:4px;line-height:1.4}
+.slide-5 .desc-panel .dp-text{color:rgba(255,255,255,.5);font-size:14px;line-height:1.65;font-weight:300}
 .slide-5 .desc-panel .dp-tag{display:inline-block;background:rgba(200,130,255,.1);border:1px solid rgba(200,130,255,.15);color:#c782ff;font-size:14px;padding:0 6px;border-radius:4px;margin-right:3px}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
@@ -617,29 +617,24 @@ html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,"N
         </div>
         <div class="desc-panel">
           <div class="dp-item">
-            <div class="dp-title">📄 改版要点</div>
+            <div class="dp-title">痛点一：文字干巴巴，零内容外露</div>
             <div class="dp-text">
-              <span class="dp-tag">VoiceCard</span> 帖子卡片 · 头像 + Lv等级 + 互动按钮<br>
-              <span class="dp-tag">StockCard</span> 股票卡片 · 与帖子统一风格<br>
-              <span class="dp-tag">讨论吧</span> 横向滑动 · 渐变底色 + 热标签<br>
-              <span class="dp-tag">有奖投票</span> 投票卡片 · 倒计时显示<br>
-              <span class="dp-tag">关注流</span> 内容直出 · 拒绝空屏幕
+              <strong style="color:rgba(255,255,255,.6)">旧版问题：</strong>用户进来满眼都是大段的吧名和简介，没有任何真实内容的呈现，无法激发浏览和吃瓜的情绪。<br><br>
+              <strong style="color:#c782ff">改版方案【内容直达】：</strong>彻底砍掉简介说明，升级为<strong>“所见即所得”的内容直接外露</strong>。让用户在首页第一眼就能直接看到关心的行情、关注的人、他们发布的真实内容，以及各个讨论吧里的热帖。
             </div>
           </div>
           <div class="dp-item">
-            <div class="dp-title">🔄 交互说明</div>
+            <div class="dp-title">痛点二：双重导航，结构太重、路径太长</div>
             <div class="dp-text">
-              讨论吧支持横向滑动切换，点击进入箭头跳转吧详情页。<br>
-              帖子卡片底部操作栏统一排布：分享 → 评论 → 点赞 → 更多。<br>
-              投票卡片支持点击参与。"查看更多"引导关注扩展。
+              <strong style="color:rgba(255,255,255,.6)">旧版问题：</strong>用户想看内容，必须先看懂左边的大分类（如期货），再看右边的小分类（如原油吧），最后再点一次才能看到帖子。层级太深，流量在漏斗中严重损耗。<br><br>
+              <strong style="color:#c782ff">改版方案【去分级·混排信息流】：</strong>打破所有类目分级，不再做任何分类隔离！将行情、关注的人、大V观点、普通帖子、吧内讨论以及投票，全面打破并无缝缝合在<strong>同一个单列 Feed 流（信息流）</strong>当中。内容不再隐藏，全面平铺展示。
             </div>
           </div>
           <div class="dp-item">
-            <div class="dp-title">🎨 视觉风格</div>
+            <div class="dp-title">痛点三：页面冰冷，毫无"人情味"</div>
             <div class="dp-text">
-              深色主题 · 渐变配色 · 毛玻璃效果<br>
-              吧模块采用背景图 + 高斯模糊 + 半透明遮罩<br>
-              等级勋章采用渐变金色，高亮用户身份
+              <strong style="color:rgba(255,255,255,.6)">旧版问题：</strong>整个页面感觉"一个人也没有"，缺乏社区该有的活跃和社交氛围。<br><br>
+              <strong style="color:#c782ff">改版方案【重度强化"人"的露出】：</strong>在首屏（第一屏）最高频、最核心的位置留给"人"和"高互动组件"，通过头像、红点、新贴数、帖子内容和群聊，让页面瞬间活起来。
             </div>
           </div>
         </div>
